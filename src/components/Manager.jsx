@@ -10,7 +10,7 @@ const Manager = () => {
     const [passwordArray, setPasswordArray] = useState([])
     const [show, setShow] = useState(false);
 
-    useEffect(() => {f
+    useEffect(() => {
         let passwords = localStorage.getItem('passwords')
         if (passwords) {
             setPasswordArray(JSON.parse(passwords))
@@ -112,7 +112,7 @@ const Manager = () => {
 
 
     return (
-        
+
         <>
 
             <ToastContainer
