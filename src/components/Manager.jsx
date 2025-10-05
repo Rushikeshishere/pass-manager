@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { ToastContainer, toast, Bounce } from 'react-toastify';
-import { v4 as uuidv4 } from 'uuid';
+import { ToastContainer, toast, Bounce } from 'react-toastify'
+import { v4 as uuidv4 } from 'uuid'
+import mongoose from 'mongoose'
 
 const Manager = () => {
 
@@ -9,7 +10,7 @@ const Manager = () => {
     const [passwordArray, setPasswordArray] = useState([])
     const [show, setShow] = useState(false);
 
-    useEffect(() => {
+    useEffect(() => {f
         let passwords = localStorage.getItem('passwords')
         if (passwords) {
             setPasswordArray(JSON.parse(passwords))
@@ -18,7 +19,9 @@ const Manager = () => {
 
 
     const showPassword = () => {
+
         const togglePassword = () => setShow(!show);
+
         if (ref.current.src.includes('icons/eyecross.png')) {
             ref.current.src = 'icons/eyeopen.png'
             togglePassword()
@@ -26,6 +29,7 @@ const Manager = () => {
             ref.current.src = 'icons/eyecross.png'
             togglePassword()
         }
+
     }
 
     const savePassword = () => {
@@ -83,6 +87,7 @@ const Manager = () => {
     }
 
     const editPassword = (id) => {
+
         // Find the password entry that matches the clicked row
         const passwordToEdit = passwordArray.find(item => item.id === id);
 
@@ -102,10 +107,12 @@ const Manager = () => {
                 theme: "light",
             });
         }
+
     };
 
 
     return (
+        
         <>
 
             <ToastContainer
